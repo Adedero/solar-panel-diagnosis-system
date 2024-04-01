@@ -53,10 +53,10 @@ const toggle = (event) => {
 </script>
 
 <template>
-    <div class="fixed bottom-9 right-5">
+    <div class="fixed z-50 bottom-9 right-5">
         <button @click="toggle" type="button" class="hover:scale-125 transition-transform"
             v-tooltip="'Start live chat'">
-            <img src="../assets/chat_icon.svg" alt="chat-icon" class="w-12">
+            <img src="../assets/chat_icon.svg" alt="chat-icon" class="w-14">
         </button>
     </div>
 
