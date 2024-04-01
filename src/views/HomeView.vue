@@ -5,7 +5,7 @@ import Button from 'primevue/button';
 
 <template>
     <!-- Small Screens -->
-    <main class="lg:hidden w-dvw p-5 bg-white" style="height: calc(100dvh - 5rem)">
+    <main class="lg:hidden w-dvw p-5 overflow-y-scroll bg-white" style="height: calc(100dvh - 5rem)">
         <div class="">
             <h1 class="text-[--blue-600] text-4xl font-medium text-center">SOLAR<span class="text-amber-500">CARE</span>
             </h1>

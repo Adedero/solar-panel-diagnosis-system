@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 
+import ChatBot from './components/ChatBot.vue';
 import Button from 'primevue/button';
 import Sidebar from 'primevue/sidebar';
 import Divider from 'primevue/divider';
@@ -10,6 +11,7 @@ const visible = ref(false);
 </script>
 
 <template>
+    <ChatBot />
     <header class="overflow-hidden bg-blue-100 flex items-center justify-between p-4 h-20">
         <div class="flex items-center gap-1">
             <img src="/logo_wordless.png" alt="logo" class="w-8">

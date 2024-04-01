@@ -73,6 +73,16 @@ const filteredFaults = computed(() => {
 
 
     </main>
+    <div class="p-5 mt-5 text-xs font-semibold flex flex-col items-center justify-center">
+        <img src="../assets/chatbot.svg" alt="chatbot" class="max-h-60 rounded-full">
+        <p class="text-center">
+            Can't find what you're looking for?
+            <br>
+            Click the floating icon at the bottom right of the screen to chat with PanelPal, our state of the art AI chatbot.
+            <br>
+        </p>
+
+    </div>
     <div class="p-5 mt-10 bg-blue-100 text-xs font-medium text-center">
         <p>
             &COPY;SOLARCARE 2024. All rights reserved.
