@@ -5,7 +5,7 @@ import { faults } from '@/data/faults';
 
 import { useUserStore } from '@/stores/user.store'
 
-
+import VTab from '@/components/VTab.vue';
 import Divider from 'primevue/divider';
 import MultiSelect from 'primevue/multiselect';
 import InputText from 'primevue/inputtext';
@@ -22,6 +22,11 @@ const symptoms = computed(() => {
         return acc.concat(fault.symptoms);
     }, []).sort();
 })
+
+
+/* const symptomsAndOther = computed(() => {
+    return symptoms.value.concat(['Other']);
+}) */
 
 const selectedSymptoms = ref([]);
 const severity = ref({});
@@ -41,12 +46,12 @@ const results = computed(() => {
 function troubleshoot() {
     loading.value = true;
     $store.setResults(results.value);
-    
+
     setTimeout(() => {
         loading.value = false;
         router.push('/results');
     }, 3000);
-    
+
 }
 
 </script>
@@ -84,6 +89,20 @@ function troubleshoot() {
                         placeholder="Select observed symptoms" class="w-full" />
                 </div>
 
+                <VTab class="mt-4" header="I can't find what I'm looking for.">
+                    <div class="p-5 mt-5 text-sm flex flex-col items-center justify-center">
+                        <img src="../assets/chatbot.svg" alt="chatbot" class="max-h-60 rounded-full">
+                        <p class="text-center">
+                            Can't find what you're looking for?
+                            <br>
+                            Click the floating icon at the bottom right of the screen to chat with PanelPal, our state
+                            of the art AI
+                            chatbot.
+                            <br>
+                        </p>
+                    </div>
+                </VTab>
+
                 <Divider />
 
                 <div class="mt-5">
@@ -117,7 +136,8 @@ function troubleshoot() {
                 </div>
 
                 <div class="mt-5">
-                    <label class="font-medium text-[--primary-color] block">Attach Pictures or Documents (optional)</label>
+                    <label class="font-medium text-[--primary-color] block">Attach Pictures or Documents
+                        (optional)</label>
 
                     <input type="file" name="file" id="file" multiple
                         class="mt-3 w-full border border-[--primary-color] rounded-md p-3">

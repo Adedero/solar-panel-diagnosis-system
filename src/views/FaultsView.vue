@@ -1,11 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { RouterView, useRouter, useRoute } from 'vue-router';
+import { faults } from "@/data/faults";
 import Button from 'primevue/button';
 
 const $router = useRouter();
 const $route = useRoute();
 
+const solarFaults = ref(faults);
 const routeList = '/faults';
 const routeTable = 'faults/table';
 
@@ -28,6 +30,26 @@ const items = ref([
                 label: 'Table',
                 icon: 'pi pi-table',
                 command: () => $router.push('/faults/table')
+            }
+        ]
+    },
+    {
+        label: 'Content',
+        items: [
+            {
+                label: 'Add',
+                icon: 'pi pi-plus',
+                command: () => $router.push('/faults/add')
+            },
+            {
+                label: 'Edit',
+                icon: 'pi pi-pencil',
+                command: () => $router.push('/faults/edit')
+            },
+            {
+                label: 'Delete',
+                icon: 'pi pi-trash',
+                command: () => $router.push('/faults/delete')
             }
         ]
     }

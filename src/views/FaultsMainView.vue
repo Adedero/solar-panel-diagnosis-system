@@ -25,7 +25,7 @@ const filteredFaults = computed(() => {
         </IconField>
 
         <div class="mt-5 ">
-            <div v-for="(fault, index) in filteredFaults" :key="fault.id" class="mb-5 lg:text-lg">
+            <div v-for="(fault, index) in filteredFaults" :key="fault.id" :id="fault.id" class="mb-5 lg:text-lg">
                 <div>
                     <h1 class="font-semibold text-lg md:text-xl lg:text-2xl">{{ index + 1 }}. {{ fault.name }}</h1>
                     <p class="mt-2">{{ fault.summary }}</p>
